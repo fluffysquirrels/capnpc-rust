@@ -1778,6 +1778,7 @@ pub fn main<T>(mut inp: T, out_dir: &::std::path::Path) -> ::capnp::Result<()>
             Line("// DO NOT EDIT.".to_string()),
             Line(format!("// source: {}", try!(requested_file.get_filename()))),
             BlankLine,
+            Line("#![allow(dead_code)]".to_string()),
             try!(generate_node(&gen, id, &root_name, None))));
 
         let text = stringify(&lines);
